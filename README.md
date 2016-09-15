@@ -10,7 +10,9 @@ A simple Xcode 8 extension that wraps https://github.com/uncrustify/uncrustify/
 
 ## usage
 
-Editor > Uncrustify > Format Current Document
+Xcode > Editor > Uncrustify > Format Current Document
+
+Hint: this works only for Objective-C files.
 
 ![](readme-images/demo.gif)
 
