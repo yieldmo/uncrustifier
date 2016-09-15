@@ -6,10 +6,13 @@ A simple Xcode 8 extension that wraps https://github.com/uncrustify/uncrustify/
 1. If you are using macOS 10.11, run ```sudo /usr/libexec/xpccachectl``` and restart your machine.
 1. Replace /Uncrustify/uncrustify.cfg with your desired configuration file.
 1. Open Uncrustifier.xcodeproj and run the Uncrustify target.  Choose Xcode as the host application.
+2. Make sure a valid team is set in both `Uncrustifier` and `Uncrustify` target: Project > Targets > (Signing section) Team
 
 ## usage
 
-Editor > Uncrustify > Format Current Document
+Xcode > Editor > Uncrustify > Format Current Document
+
+Hint: this works only for Objective-C files.
 
 ![](readme-images/demo.gif)
 
