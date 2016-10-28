@@ -50,13 +50,12 @@
 		F455FC151D83518E003F93FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F455FC1F1D8351AA003F93FF /* Uncrustify.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Uncrustify.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455FC211D8351AA003F93FF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		F455FC251D8351AA003F93FF /* Uncrustify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Uncrustify.entitlements; sourceTree = "<group>"; };
 		F455FC261D8351AA003F93FF /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		F455FC281D8351AA003F93FF /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		F455FC2A1D8351AA003F93FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F455FC321D835200003F93FF /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
 		F455FC331D835200003F93FF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
-		F455FC341D835200003F93FF /* clang-format */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "clang-format"; sourceTree = "<group>"; };
+		F49E727E1DC3A518002866D2 /* uncrustify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uncrustify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +131,7 @@
 			children = (
 				F455FC321D835200003F93FF /* uncrustify */,
 				F455FC331D835200003F93FF /* uncrustify.cfg */,
-				F455FC341D835200003F93FF /* clang-format */,
-				F455FC251D8351AA003F93FF /* Uncrustify.entitlements */,
+				F49E727E1DC3A518002866D2 /* uncrustify.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,6 +189,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HJEVPA356N;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					F455FC1E1D8351AA003F93FF = {
 						CreatedOnToolsVersion = 8.0;
@@ -374,6 +377,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HJEVPA356N;
@@ -381,6 +385,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -390,6 +396,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HJEVPA356N;
@@ -397,6 +404,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -404,7 +413,7 @@
 		F455FC2F1D8351AA003F93FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Uncrustify/Uncrustify.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HJEVPA356N;
@@ -413,6 +422,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier.Uncrustify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -421,7 +432,7 @@
 		F455FC301D8351AA003F93FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Uncrustify/Uncrustify.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HJEVPA356N;
