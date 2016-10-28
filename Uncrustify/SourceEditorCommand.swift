@@ -28,7 +28,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         task.launchPath = commandPath
         
         // configure uncrustify to format with bundled uncrustify.cfg, format for Objective-C, and strip messages
-        task.arguments = [ "-c=\(commandConfigPath)","-l=OC","-q"]
+        task.arguments = [ "-c=\(commandConfigPath)","-l=OC+","-q"]
         
         let inputPipe = Pipe()
         task.standardInput = inputPipe
