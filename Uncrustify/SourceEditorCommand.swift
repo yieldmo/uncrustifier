@@ -14,7 +14,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     }
     
     var commandConfigPath: String {
-        return Bundle.main.path(forResource: "uncrustify.cfg", ofType: nil)!
+        return Bundle.main.path(forResource: "uncrustifyDefault.cfg", ofType: nil)!
     }
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
@@ -27,7 +27,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         task.standardOutput = outputPipe
         task.launchPath = commandPath
         
-        // configure uncrustify to format with bundled uncrustify.cfg, format for Objective-C, and strip messages
+        // configure uncrustify to format with bundled cfg, format for Objective-C, and strip messages
         task.arguments = [ "-c=\(commandConfigPath)","-l=OC+","-q"]
         
         let inputPipe = Pipe()

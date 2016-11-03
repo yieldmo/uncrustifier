@@ -12,11 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Uncrustifier" customModuleProvider="target">
-            <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-            </connections>
-        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Uncrustifier" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -100,19 +96,19 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-222" y="-168"/>
+            <point key="canvasLocation" x="-132" y="-156"/>
         </menu>
         <window title="Uncrustifier" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="494" height="358"/>
+            <rect key="contentRect" x="335" y="390" width="460" height="358"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="494" height="358"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ" customClass="ConfigSelectionView" customModule="Uncrustifier" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="460" height="358"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLL-bK-bag">
-                        <rect key="frame" x="72" y="236" width="318" height="26"/>
+                        <rect key="frame" x="71" y="237" width="318" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Yieldmo" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ggq-kd-kyD" id="pci-yt-z7F">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -122,13 +118,13 @@
                                     <menuItem title="Yieldmo" state="on" id="ggq-kd-kyD"/>
                                     <menuItem title="Ryan Maxwell" id="DV9-Mz-ov2"/>
                                     <menuItem title="Huge" id="PVB-PJ-qxf"/>
-                                    <menuItem title="Choose File..." id="CZA-gz-9f2"/>
+                                    <menuItem title="Custom File..." id="CZA-gz-9f2"/>
                                 </items>
                             </menu>
                         </popUpButtonCell>
                     </popUpButton>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Mz-Ds-grT">
-                        <rect key="frame" x="218" y="267" width="25" height="25"/>
+                        <rect key="frame" x="218" y="266" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gBi-aG-lba">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -136,7 +132,7 @@
                         </buttonCell>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMv-Je-WUm">
-                        <rect key="frame" x="72" y="272" width="147" height="17"/>
+                        <rect key="frame" x="72" y="273" width="147" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Uncrusity configuration" id="Yvz-ZJ-qpp">
                             <font key="font" metaFont="system"/>
@@ -153,17 +149,8 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-kp-mg8">
-                        <rect key="frame" x="89" y="20" width="283" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Full source at github.com/yieldmo/uncrustifier" id="GhT-xY-KuG">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-fS-ZeS">
-                        <rect key="frame" x="72" y="216" width="317" height="17"/>
+                        <rect key="frame" x="72" y="215" width="316" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="/path/to/custom/config/" id="nZe-me-ivE">
                             <font key="font" metaFont="system"/>
@@ -171,9 +158,19 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-kp-mg8">
+                        <rect key="frame" x="88" y="20" width="283" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Full source at github.com/yieldmo/uncrustifier" id="GhT-xY-KuG">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-49" y="149"/>
+            <point key="canvasLocation" x="-16" y="145"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="fP3-DR-6jv"/>
     </objects>
 </document>
