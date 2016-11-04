@@ -27,5 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSApplicationTerminateReply.terminateNow
     }
 
+    @IBAction func quitAction(_ sender: AnyObject) {
+        NSApplication.shared().terminate(sender)
+    }
 }
 

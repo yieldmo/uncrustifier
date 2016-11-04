@@ -5,15 +5,86 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Uncrustifier" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Uncrustifier" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Uncrustifier" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide Uncrustifier" keyEquivalent="h" id="Olw-nP-bQN"/>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit Uncrustifier" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="quitAction:" target="1Sh-35-qRx" id="ozf-d9-tss"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="File" id="dMs-cI-mzQ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="bib-Uj-vzu">
+                                    <items>
+                                        <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
+                                            <connections>
+                                                <segue destination="vcF-0r-8Ma" kind="show" id="u23-ef-IKv"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV"/>
+                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="1Sh-35-qRx" id="Wwp-Vv-3at"/>
+                    </connections>
+                </application>
+                <customObject id="1Sh-35-qRx" customClass="AppDelegate" customModule="Uncrustifier" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="-508"/>
+        </scene>
         <!--Window Controller-->
         <scene sceneID="vvk-0Q-Y9b">
             <objects>
                 <windowController id="vcF-0r-8Ma" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NDF-c1-CKk">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="-1626" y="310" width="480" height="273"/>
+                        <rect key="contentRect" x="311" y="311" width="480" height="272"/>
                         <rect key="screenRect" x="-1920" y="0.0" width="1920" height="1057"/>
+                        <value key="minSize" type="size" width="480" height="272"/>
                     </window>
                     <connections>
                         <segue destination="kdz-ae-kfR" kind="relationship" relationship="window.shadowedContentViewController" id="tqo-po-RrG"/>
@@ -21,7 +92,7 @@
                 </windowController>
                 <customObject id="hvN-52-SKZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43" y="154.5"/>
+            <point key="canvasLocation" x="43" y="155"/>
         </scene>
         <!--Config Selection View Controller-->
         <scene sceneID="vJG-Z2-lQ5">
@@ -119,71 +190,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="configSelectionButton" destination="fBZ-Fi-DrS" id="h2n-k4-kf5"/>
                         <outlet property="customConfigPath" destination="LbB-99-3dP" id="yDh-GY-mxA"/>
                         <outlet property="githubButton" destination="wJE-Ft-6X8" id="bcy-By-C7q"/>
                     </connections>
                 </viewController>
                 <customObject id="Fyr-5o-Qkf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu title="Main Menu" systemMenu="main" id="xJ0-rL-P7z">
-                    <items>
-                        <menuItem title="Uncrustifier" id="vGF-zS-3fD">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <menu key="submenu" title="Uncrustifier" systemMenu="apple" id="DRe-WM-GRh">
-                                <items>
-                                    <menuItem title="About Uncrustifier" id="8Xy-Uo-1k9">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="u7S-MT-qIq"/>
-                                    <menuItem title="Services" id="g3c-bQ-aBv">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <menu key="submenu" title="Services" systemMenu="services" id="riJ-LH-H6c"/>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="6h8-W2-wOn"/>
-                                    <menuItem title="Hide Uncrustifier" keyEquivalent="h" id="v6s-FO-MLQ"/>
-                                    <menuItem title="Hide Others" keyEquivalent="h" id="EAw-44-Gec">
-                                        <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                    </menuItem>
-                                    <menuItem title="Show All" id="xPR-Yo-bFr">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="IL6-7y-Rp2"/>
-                                    <menuItem title="Quit Uncrustifier" keyEquivalent="q" id="fDw-QE-Jni"/>
-                                </items>
-                            </menu>
-                        </menuItem>
-                        <menuItem title="Window" id="MAP-gl-UVe">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <menu key="submenu" title="Window" systemMenu="window" id="ZDg-6o-xG3">
-                                <items>
-                                    <menuItem title="Minimize" keyEquivalent="m" id="eKd-Zf-xeO"/>
-                                    <menuItem title="Zoom" id="Od7-G3-nNt">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="Configuration" id="vc8-MI-17O">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <segue destination="vcF-0r-8Ma" kind="show" id="Nd6-3s-Ave"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="ZkE-1N-T1W"/>
-                                    <menuItem title="Bring All to Front" id="AC6-VM-QiR">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                </items>
-                            </menu>
-                        </menuItem>
-                        <menuItem title="Help" id="qKC-zB-v2S">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <menu key="submenu" title="Help" systemMenu="help" id="iDP-ny-s5J">
-                                <items>
-                                    <menuItem title="Uncrustifier Help" keyEquivalent="?" id="bNS-df-wWk"/>
-                                </items>
-                            </menu>
-                        </menuItem>
-                    </items>
-                </menu>
             </objects>
-            <point key="canvasLocation" x="49" y="851"/>
+            <point key="canvasLocation" x="43" y="629"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="INg-G7-m3f">
@@ -212,13 +226,10 @@
                             <constraint firstItem="YLj-uH-kB3" firstAttribute="leading" secondItem="Yo7-u3-8HP" secondAttribute="leading" constant="20" symbolic="YES" id="bJr-FI-s4I"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="popupHintText" destination="YLj-uH-kB3" id="TND-hO-iZy"/>
-                    </connections>
                 </viewController>
                 <customObject id="1Fd-aW-6ox" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="1260"/>
+            <point key="canvasLocation" x="44" y="972"/>
         </scene>
     </scenes>
 </document>
