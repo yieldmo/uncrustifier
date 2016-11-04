@@ -12,9 +12,12 @@
 		F41555FC1DCA818400A23EED /* mrkd.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F31DCA818400A23EED /* mrkd.cfg */; };
 		F41555FD1DCA818400A23EED /* dijkst.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F41DCA818400A23EED /* dijkst.cfg */; };
 		F41555FE1DCA818400A23EED /* dijkst.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F41DCA818400A23EED /* dijkst.cfg */; };
-		F41556001DCA818400A23EED /* uncrustifyDefault.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F51DCA818400A23EED /* uncrustifyDefault.cfg */; };
-		F41556021DCA818400A23EED /* hugeConfig.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F61DCA818400A23EED /* hugeConfig.cfg */; };
+		F41556001DCA818400A23EED /* default.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F51DCA818400A23EED /* default.cfg */; };
+		F41556021DCA818400A23EED /* huge.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F61DCA818400A23EED /* huge.cfg */; };
 		F43A6AB11DCB80C20071B3C7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43A6AB01DCB80C20071B3C7 /* MainStoryboard.storyboard */; };
+		F43A6AB91DCBC7BF0071B3C7 /* SharedFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A6AB81DCBC7BF0071B3C7 /* SharedFileManager.swift */; };
+		F43A6ABA1DCBC7BF0071B3C7 /* SharedFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A6AB81DCBC7BF0071B3C7 /* SharedFileManager.swift */; };
+		F43A6ABC1DCC26320071B3C7 /* cfgOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F43A6ABB1DCC26320071B3C7 /* cfgOptions.plist */; };
 		F455FC0F1D83518E003F93FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455FC0E1D83518E003F93FF /* AppDelegate.swift */; };
 		F455FC111D83518E003F93FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F455FC101D83518E003F93FF /* Assets.xcassets */; };
 		F455FC221D8351AA003F93FF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F455FC211D8351AA003F93FF /* Cocoa.framework */; };
@@ -23,7 +26,6 @@
 		F455FC2D1D8351AA003F93FF /* Uncrustify.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F455FC1F1D8351AA003F93FF /* Uncrustify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F455FC351D835200003F93FF /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = F455FC321D835200003F93FF /* uncrustify */; };
 		F487DF301DC93ADE002F9E55 /* ConfigSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F487DF2C1DC92CD4002F9E55 /* ConfigSelectionViewController.swift */; };
-		F487DF321DC941AF002F9E55 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F487DF311DC941AF002F9E55 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,11 @@
 		F41555F21DCA818400A23EED /* ryanmaxwell.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ryanmaxwell.cfg; sourceTree = "<group>"; };
 		F41555F31DCA818400A23EED /* mrkd.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mrkd.cfg; sourceTree = "<group>"; };
 		F41555F41DCA818400A23EED /* dijkst.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dijkst.cfg; sourceTree = "<group>"; };
-		F41555F51DCA818400A23EED /* uncrustifyDefault.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustifyDefault.cfg; sourceTree = "<group>"; };
-		F41555F61DCA818400A23EED /* hugeConfig.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hugeConfig.cfg; sourceTree = "<group>"; };
+		F41555F51DCA818400A23EED /* default.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = default.cfg; sourceTree = "<group>"; };
+		F41555F61DCA818400A23EED /* huge.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = huge.cfg; sourceTree = "<group>"; };
 		F43A6AB01DCB80C20071B3C7 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F43A6AB81DCBC7BF0071B3C7 /* SharedFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedFileManager.swift; sourceTree = "<group>"; };
+		F43A6ABB1DCC26320071B3C7 /* cfgOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cfgOptions.plist; sourceTree = "<group>"; };
 		F455FC0B1D83518E003F93FF /* Uncrustifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uncrustifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455FC0E1D83518E003F93FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F455FC101D83518E003F93FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,8 +72,7 @@
 		F455FC281D8351AA003F93FF /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		F455FC2A1D8351AA003F93FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F455FC321D835200003F93FF /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
-		F487DF2C1DC92CD4002F9E55 /* ConfigSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigSelectionViewController.swift; sourceTree = "<group>"; };
-		F487DF311DC941AF002F9E55 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		F487DF2C1DC92CD4002F9E55 /* ConfigSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigSelectionViewController.swift; path = ../Uncrustify/ConfigSelectionViewController.swift; sourceTree = "<group>"; };
 		F49E727E1DC3A518002866D2 /* uncrustify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uncrustify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,8 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				F455FC0E1D83518E003F93FF /* AppDelegate.swift */,
+				F487DF2C1DC92CD4002F9E55 /* ConfigSelectionViewController.swift */,
+				F43A6AB81DCBC7BF0071B3C7 /* SharedFileManager.swift */,
 				F455FC101D83518E003F93FF /* Assets.xcassets */,
-				F487DF311DC941AF002F9E55 /* MainMenu.xib */,
 				F43A6AB01DCB80C20071B3C7 /* MainStoryboard.storyboard */,
 				F455FC151D83518E003F93FF /* Info.plist */,
 			);
@@ -134,8 +138,8 @@
 		F455FC231D8351AA003F93FF /* Uncrustify */ = {
 			isa = PBXGroup;
 			children = (
+				F43A6ABB1DCC26320071B3C7 /* cfgOptions.plist */,
 				F455FC261D8351AA003F93FF /* SourceEditorExtension.swift */,
-				F487DF2C1DC92CD4002F9E55 /* ConfigSelectionViewController.swift */,
 				F455FC281D8351AA003F93FF /* SourceEditorCommand.swift */,
 				F455FC2A1D8351AA003F93FF /* Info.plist */,
 				F455FC241D8351AA003F93FF /* Supporting Files */,
@@ -151,8 +155,8 @@
 				F41555F21DCA818400A23EED /* ryanmaxwell.cfg */,
 				F41555F31DCA818400A23EED /* mrkd.cfg */,
 				F41555F41DCA818400A23EED /* dijkst.cfg */,
-				F41555F51DCA818400A23EED /* uncrustifyDefault.cfg */,
-				F41555F61DCA818400A23EED /* hugeConfig.cfg */,
+				F41555F51DCA818400A23EED /* default.cfg */,
+				F41555F61DCA818400A23EED /* huge.cfg */,
 				F49E727E1DC3A518002866D2 /* uncrustify.entitlements */,
 			);
 			name = "Supporting Files";
@@ -254,7 +258,6 @@
 				F41555FD1DCA818400A23EED /* dijkst.cfg in Resources */,
 				F455FC111D83518E003F93FF /* Assets.xcassets in Resources */,
 				F43A6AB11DCB80C20071B3C7 /* MainStoryboard.storyboard in Resources */,
-				F487DF321DC941AF002F9E55 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,12 +265,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41556001DCA818400A23EED /* uncrustifyDefault.cfg in Resources */,
+				F41556001DCA818400A23EED /* default.cfg in Resources */,
 				F41555FC1DCA818400A23EED /* mrkd.cfg in Resources */,
 				F41555F81DCA818400A23EED /* yieldmo.cfg in Resources */,
 				F455FC351D835200003F93FF /* uncrustify in Resources */,
-				F41556021DCA818400A23EED /* hugeConfig.cfg in Resources */,
+				F41556021DCA818400A23EED /* huge.cfg in Resources */,
 				F41555FE1DCA818400A23EED /* dijkst.cfg in Resources */,
+				F43A6ABC1DCC26320071B3C7 /* cfgOptions.plist in Resources */,
 				F41555FA1DCA818400A23EED /* ryanmaxwell.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43A6AB91DCBC7BF0071B3C7 /* SharedFileManager.swift in Sources */,
 				F455FC0F1D83518E003F93FF /* AppDelegate.swift in Sources */,
 				F487DF301DC93ADE002F9E55 /* ConfigSelectionViewController.swift in Sources */,
 			);
@@ -288,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43A6ABA1DCBC7BF0071B3C7 /* SharedFileManager.swift in Sources */,
 				F455FC271D8351AA003F93FF /* SourceEditorExtension.swift in Sources */,
 				F455FC291D8351AA003F93FF /* SourceEditorCommand.swift in Sources */,
 			);

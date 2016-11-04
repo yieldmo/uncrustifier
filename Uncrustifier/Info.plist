@@ -28,9 +28,9 @@
 	<string>Copyright © 2016 Yieldmo. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>MainStoryboard</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
 	<key>AppIdentifierPrefix</key>
 	<string>$(AppIdentifierPrefix)</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>

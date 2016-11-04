@@ -9,12 +9,26 @@ import Foundation
 import XcodeKit
 
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
+    
+    static let cfgOptionsPath = Bundle.main.path(forResource: "cfgOptions", ofType: "plist")!
+    static let cfgOptions = NSDictionary(contentsOfFile: cfgOptionsPath) as! [String: String]
+    
     var commandPath: String {
         return Bundle.main.path(forResource: "uncrustify", ofType: nil)!
     }
     
     var commandConfigPath: String {
-        return Bundle.main.path(forResource: "uncrustifyDefault.cfg", ofType: nil)!
+        let selection = SharedFileManager.readSelection()!
+        
+        
+        // if config option is in cfgOptions plist, use bundled config
+        if let configName = SourceEditorCommand.cfgOptions[selection]{
+            return Bundle.main.path(forResource: configName, ofType: nil)!
+        }
+        else{
+            // otherwise, use custom config path
+            return SharedFileManager.customConfigPath()?.relativePath ?? ""
+        }
     }
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
@@ -27,7 +41,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         task.standardOutput = outputPipe
         task.launchPath = commandPath
         
-        // configure uncrustify to format with bundled cfg, format for Objective-C, and strip messages
+        // configure uncrustify to format with specified cfg, format for Objective-C, and strip messages
         task.arguments = [ "-c=\(commandConfigPath)","-l=OC+","-q"]
         
         let inputPipe = Pipe()
