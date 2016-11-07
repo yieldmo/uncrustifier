@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Yieldmo</key>
+	<string>yieldmo.cfg</string>
+	<key>Ryan Maxwell</key>
+	<string>ryanmaxwell.cfg</string>
+	<key>mrkd</key>
+	<string>mrkd.cfg</string>
+	<key>dijkst</key>
+	<string>dijkst.cfg</string>
+	<key>Huge</key>
+	<string>huge.cfg</string>
+	<key>default</key>
+	<string>default.cfg</string>
+</dict>
+</plist>
