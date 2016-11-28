@@ -32,6 +32,9 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     }
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
+        // save the currect selection
+        let previousSelection: XCSourceTextRange? = (invocation.buffer.selections.firstObject as? XCSourceTextRange)?.copy() as? XCSourceTextRange
+
         let errorPipe = Pipe()
         let outputPipe = Pipe()
         
@@ -68,9 +71,41 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             
         }
         
-        // fixes crash if there is no selection when completion handler is called
-        invocation.buffer.selections.add(XCSourceTextRange(start: XCSourceTextPosition(line: 0, column: 0), end: XCSourceTextPosition(line: 0, column: 0)))
-        
+        // adjust selection to fit within the formatted buffer
+        invocation.buffer.selections.removeAllObjects()
+        if var selection = previousSelection{
+            
+            func adjustedSelection(_ s: XCSourceTextRange) -> XCSourceTextRange{
+                let lineLimit = invocation.buffer.lines.count - 1
+                
+                if (s.start.line > lineLimit){
+                    s.start.line = lineLimit
+                }
+                
+                if (s.end.line > lineLimit){
+                    s.end.line = lineLimit
+                }
+
+                let columnLimitStart = (invocation.buffer.lines[s.start.line] as! NSString).length - 1
+                if (s.start.column > columnLimitStart){
+                    s.start.column = columnLimitStart
+                }
+
+                let columnLimitEnd = (invocation.buffer.lines[s.end.line] as! NSString).length - 1
+                if (s.end.column > columnLimitEnd){
+                    s.end.column = columnLimitEnd
+                }
+                
+                return s
+            }
+            
+            invocation.buffer.selections.add(adjustedSelection(selection))
+        }
+        else{
+            // fixes crash if there is no selection when completion handler is called
+            invocation.buffer.selections.add(XCSourceTextRange(start: XCSourceTextPosition(line: 0, column: 0), end: XCSourceTextPosition(line: 0, column: 0)))
+        }
+
         completionHandler(nil)
     }
 }
