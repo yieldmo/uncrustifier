@@ -8,8 +8,8 @@
 import Foundation
 import XcodeKit
 
+
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
-    
     static let cfgOptionsPath = Bundle.main.path(forResource: "cfgOptions", ofType: "plist")!
     static let cfgOptions = NSDictionary(contentsOfFile: cfgOptionsPath) as! [String: String]
     
@@ -22,10 +22,10 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         
         // if config option is in cfgOptions plist, use bundled config
-        if let configName = SourceEditorCommand.cfgOptions[selection]{
+        if let configName = SourceEditorCommand.cfgOptions[selection] {
             return Bundle.main.path(forResource: configName, ofType: nil)!
         }
-        else{
+        else {
             // otherwise, use custom config path
             return SharedFileManager.customConfigPath()?.relativePath ?? ""
         }
@@ -45,7 +45,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         task.launchPath = commandPath
         
         // configure uncrustify to format with specified cfg, format for Objective-C, and strip messages
-        task.arguments = [ "-c=\(commandConfigPath)","-l=OC+","-q"]
+        task.arguments = ["-c=\(commandConfigPath)", "-l=OC+", "-q"]
         
         let inputPipe = Pipe()
         task.standardInput = inputPipe
@@ -65,34 +65,33 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         if let outputString = String(data: outputData, encoding: .utf8) {
             
             invocation.buffer.lines.removeAllObjects()
-            outputString.enumerateLines(invoking: { (s:String, _) in
+            outputString.enumerateLines(invoking: { (s: String, _) in
                 invocation.buffer.lines.add(s)
             })
-            
         }
         
         // adjust selection to fit within the formatted buffer
         invocation.buffer.selections.removeAllObjects()
-        if var selection = previousSelection{
+        if let selection = previousSelection {
             
-            func adjustedSelection(_ s: XCSourceTextRange) -> XCSourceTextRange{
+            func adjustedSelection(_ s: XCSourceTextRange) -> XCSourceTextRange {
                 let lineLimit = invocation.buffer.lines.count - 1
                 
-                if (s.start.line > lineLimit){
+                if s.start.line > lineLimit {
                     s.start.line = lineLimit
                 }
                 
-                if (s.end.line > lineLimit){
+                if s.end.line > lineLimit {
                     s.end.line = lineLimit
                 }
 
                 let columnLimitStart = (invocation.buffer.lines[s.start.line] as! NSString).length - 1
-                if (s.start.column > columnLimitStart){
+                if s.start.column > columnLimitStart {
                     s.start.column = columnLimitStart
                 }
 
                 let columnLimitEnd = (invocation.buffer.lines[s.end.line] as! NSString).length - 1
-                if (s.end.column > columnLimitEnd){
+                if s.end.column > columnLimitEnd {
                     s.end.column = columnLimitEnd
                 }
                 
@@ -101,7 +100,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             
             invocation.buffer.selections.add(adjustedSelection(selection))
         }
-        else{
+        else {
             // fixes crash if there is no selection when completion handler is called
             invocation.buffer.selections.add(XCSourceTextRange(start: XCSourceTextPosition(line: 0, column: 0), end: XCSourceTextPosition(line: 0, column: 0)))
         }

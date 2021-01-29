@@ -1,8 +1,8 @@
 # uncrustifier
-A simple Xcode 8 extension that wraps https://github.com/uncrustify/uncrustify/
+A simple Xcode 12 extension that wraps https://github.com/uncrustify/uncrustify/
 
 ## build
-1. Build using Xcode 8+.
+1. Build using Xcode 12+.
 1. If you are using macOS 10.11, run ```sudo /usr/libexec/xpccachectl``` and restart your machine.
 1. Replace /Uncrustify/uncrustify.cfg with your desired configuration file.
 1. Open Uncrustifier.xcodeproj and run the Uncrustify target.  Choose Xcode as the host application.

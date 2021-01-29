@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C23A810025C45BF700059DB5 /* haanstra.cfg in Resources */ = {isa = PBXBuildFile; fileRef = C23A80FF25C45BF700059DB5 /* haanstra.cfg */; };
+		C2A2682F25C44E03003D621D /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A2682E25C44E03003D621D /* XcodeKit.framework */; };
+		C2A2683025C44E03003D621D /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2A2682E25C44E03003D621D /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F41555F81DCA818400A23EED /* yieldmo.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F11DCA818400A23EED /* yieldmo.cfg */; };
 		F41555FA1DCA818400A23EED /* ryanmaxwell.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F21DCA818400A23EED /* ryanmaxwell.cfg */; };
 		F41555FC1DCA818400A23EED /* mrkd.cfg in Resources */ = {isa = PBXBuildFile; fileRef = F41555F31DCA818400A23EED /* mrkd.cfg */; };
@@ -39,6 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C2A2683125C44E03003D621D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C2A2683025C44E03003D621D /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F455FC311D8351AA003F93FF /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C23A80FF25C45BF700059DB5 /* haanstra.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = haanstra.cfg; sourceTree = "<group>"; };
+		C2A2682E25C44E03003D621D /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		F41555F11DCA818400A23EED /* yieldmo.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yieldmo.cfg; sourceTree = "<group>"; };
 		F41555F21DCA818400A23EED /* ryanmaxwell.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ryanmaxwell.cfg; sourceTree = "<group>"; };
 		F41555F31DCA818400A23EED /* mrkd.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mrkd.cfg; sourceTree = "<group>"; };
@@ -89,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F455FC221D8351AA003F93FF /* Cocoa.framework in Frameworks */,
+				C2A2682F25C44E03003D621D /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +147,7 @@
 		F455FC201D8351AA003F93FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2A2682E25C44E03003D621D /* XcodeKit.framework */,
 				F455FC211D8351AA003F93FF /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -152,6 +170,7 @@
 			children = (
 				F455FC321D835200003F93FF /* uncrustify */,
 				F41555F11DCA818400A23EED /* yieldmo.cfg */,
+				C23A80FF25C45BF700059DB5 /* haanstra.cfg */,
 				F41555F21DCA818400A23EED /* ryanmaxwell.cfg */,
 				F41555F31DCA818400A23EED /* mrkd.cfg */,
 				F41555F41DCA818400A23EED /* dijkst.cfg */,
@@ -191,6 +210,7 @@
 				F455FC1B1D8351AA003F93FF /* Sources */,
 				F455FC1C1D8351AA003F93FF /* Frameworks */,
 				F455FC1D1D8351AA003F93FF /* Resources */,
+				C2A2683125C44E03003D621D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,12 +228,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Yieldmo;
 				TargetAttributes = {
 					F455FC0A1D83518E003F93FF = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HJEVPA356N;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
@@ -226,14 +245,13 @@
 					};
 					F455FC1E1D8351AA003F93FF = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HJEVPA356N;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = F455FC061D83518E003F93FF /* Build configuration list for PBXProject "Uncrustifier" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -265,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C23A810025C45BF700059DB5 /* haanstra.cfg in Resources */,
 				F41556001DCA818400A23EED /* default.cfg in Resources */,
 				F41555FC1DCA818400A23EED /* mrkd.cfg in Resources */,
 				F41555F81DCA818400A23EED /* yieldmo.cfg in Resources */,
@@ -319,15 +338,25 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -356,6 +385,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -368,15 +398,25 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -397,6 +437,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -408,14 +449,16 @@
 				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HJEVPA356N;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Uncrustifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -427,14 +470,16 @@
 				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HJEVPA356N;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Uncrustifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -444,16 +489,18 @@
 				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HJEVPA356N;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Uncrustify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier.Uncrustify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -463,14 +510,16 @@
 				CODE_SIGN_ENTITLEMENTS = Uncrustify/uncrustify.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HJEVPA356N;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Uncrustify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yieldmo.dev.Uncrustifier.Uncrustify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

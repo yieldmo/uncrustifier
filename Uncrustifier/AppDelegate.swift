@@ -7,6 +7,7 @@
 
 import Cocoa
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -23,12 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplicationTerminateReply {
-        return NSApplicationTerminateReply.terminateNow
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        return NSApplication.TerminateReply.terminateNow
     }
 
     @IBAction func quitAction(_ sender: AnyObject) {
-        NSApplication.shared().terminate(sender)
+        NSApplication.shared.terminate(sender)
     }
 }
-

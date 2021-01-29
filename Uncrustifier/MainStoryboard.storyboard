@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="vcF-0r-8Ma">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="vcF-0r-8Ma">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -80,11 +81,14 @@
         <scene sceneID="vvk-0Q-Y9b">
             <objects>
                 <windowController id="vcF-0r-8Ma" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NDF-c1-CKk">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NDF-c1-CKk">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="311" y="311" width="480" height="272"/>
                         <rect key="screenRect" x="-1920" y="0.0" width="1920" height="1057"/>
                         <value key="minSize" type="size" width="480" height="272"/>
+                        <connections>
+                            <outlet property="delegate" destination="vcF-0r-8Ma" id="oYr-lj-xq7"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="kdz-ae-kfR" kind="relationship" relationship="window.shadowedContentViewController" id="tqo-po-RrG"/>
@@ -103,13 +107,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fBZ-Fi-DrS">
-                                <rect key="frame" x="99" y="260" width="318" height="26"/>
+                                <rect key="frame" x="100" y="261" width="317" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Yieldmo" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WpY-4H-f8S" id="KaO-Se-Fa4">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" title="rawr" id="LnV-V2-iuu">
                                         <items>
                                             <menuItem title="Yieldmo" state="on" id="WpY-4H-f8S"/>
+                                            <menuItem title="Haanstra" id="DPj-hC-XZn"/>
                                             <menuItem title="Ryan Maxwell" id="m3Y-Kb-Kvg"/>
                                             <menuItem title="Huge" id="WG4-3Z-Y67"/>
                                             <menuItem title="mrkd" id="RPg-6F-eSU"/>
@@ -124,7 +129,7 @@
                                 </connections>
                             </popUpButton>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d05-qA-SJu">
-                                <rect key="frame" x="246" y="289" width="25" height="25"/>
+                                <rect key="frame" x="245" y="289" width="25" height="25"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qD3-uU-ZQR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -134,7 +139,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XQo-Cu-G3t">
-                                <rect key="frame" x="100" y="296" width="147" height="17"/>
+                                <rect key="frame" x="101" y="297" width="146" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Uncrusity configuration" id="lyl-dT-lPG">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -142,7 +147,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-99-3dP">
-                                <rect key="frame" x="100" y="238" width="316" height="17"/>
+                                <rect key="frame" x="101" y="241" width="314" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="/path/to/custom/config/" id="dRh-35-sgK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -150,7 +155,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-Vv-Msn">
-                                <rect key="frame" x="180" y="45" width="156" height="17"/>
+                                <rect key="frame" x="180" y="45" width="157" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Made with ❤️ at Yieldmo" id="c0T-Dh-Y1F">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -158,7 +163,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wJE-Ft-6X8">
-                                <rect key="frame" x="104" y="16" width="307" height="21"/>
+                                <rect key="frame" x="105" y="16" width="307" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="307" id="4zU-ao-fGB"/>
                                     <constraint firstAttribute="height" constant="21" id="WOn-ds-T9e"/>
