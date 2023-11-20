@@ -1,10 +1,3 @@
-//
-//  SharedAppContainerManager.swift
-//  Uncrustifier
-//
-//  Created by Nook Harquail on 11/3/16.
-//
-
 import Foundation
 import Cocoa
 

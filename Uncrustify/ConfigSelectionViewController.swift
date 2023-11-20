@@ -1,10 +1,3 @@
-//
-//  ConfigSelectionController.swift
-//  Uncrustifier
-//
-//  Created by Nook Harquail on 11/1/16.
-//
-
 import Cocoa
 
 
@@ -27,11 +20,11 @@ class ConfigSelectionViewController: NSViewController {
         }
     }
     
-    @IBAction func configSelected(_ sender: NSPopUpButton) {
-
+    @IBAction
+    func configSelected(_ sender: NSPopUpButton) {
         SharedFileManager.writeSelection(named: sender.title)
 
-        // choose file
+        // Choose file
         if sender.title == "Custom File..." {
             let myOpenDialog = NSOpenPanel()
             myOpenDialog.canChooseDirectories = true
@@ -51,7 +44,8 @@ class ConfigSelectionViewController: NSViewController {
         }
     }
 
-    @IBAction func githubButtonTapped(_ sender: NSButton) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/yieldmo/uncrustifier")!)
+    @IBAction 
+    func githubButtonTapped(_ sender: NSButton) {
+        NSWorkspace.shared.open(URL(string: "https://github.com/BarryHaanstra/uncrustifier")!)
     }
 }

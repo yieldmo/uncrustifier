@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="vcF-0r-8Ma">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="vcF-0r-8Ma">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -108,13 +108,13 @@
                         <subviews>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fBZ-Fi-DrS">
                                 <rect key="frame" x="100" y="261" width="317" height="25"/>
-                                <popUpButtonCell key="cell" type="push" title="Yieldmo" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WpY-4H-f8S" id="KaO-Se-Fa4">
+                                <popUpButtonCell key="cell" type="push" title="Haanstra" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DPj-hC-XZn" id="KaO-Se-Fa4">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" title="rawr" id="LnV-V2-iuu">
                                         <items>
-                                            <menuItem title="Yieldmo" state="on" id="WpY-4H-f8S"/>
-                                            <menuItem title="Haanstra" id="DPj-hC-XZn"/>
+                                            <menuItem title="Yieldmo" id="WpY-4H-f8S"/>
+                                            <menuItem title="Haanstra" state="on" id="DPj-hC-XZn"/>
                                             <menuItem title="Ryan Maxwell" id="m3Y-Kb-Kvg"/>
                                             <menuItem title="Huge" id="WG4-3Z-Y67"/>
                                             <menuItem title="mrkd" id="RPg-6F-eSU"/>
@@ -155,23 +155,23 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-Vv-Msn">
-                                <rect key="frame" x="180" y="45" width="157" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Made with ❤️ at Yieldmo" id="c0T-Dh-Y1F">
+                                <rect key="frame" x="158" y="45" width="201" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fixed with ❤️ by Barry Haanstra" id="c0T-Dh-Y1F">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wJE-Ft-6X8">
-                                <rect key="frame" x="105" y="16" width="307" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="307" id="4zU-ao-fGB"/>
-                                    <constraint firstAttribute="height" constant="21" id="WOn-ds-T9e"/>
-                                </constraints>
-                                <buttonCell key="cell" type="bevel" title="Full source at github.com/yieldmo/uncrustifier" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="AGC-cU-Pqk">
+                                <rect key="frame" x="83" y="16" width="350" height="21"/>
+                                <buttonCell key="cell" type="bevel" title="Full source at github.com/BarryHaanstra/uncrustifier" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="AGC-cU-Pqk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="4zU-ao-fGB"/>
+                                    <constraint firstAttribute="height" constant="21" id="WOn-ds-T9e"/>
+                                </constraints>
                                 <connections>
                                     <action selector="githubButtonTapped:" target="kdz-ae-kfR" id="iID-mY-QAo"/>
                                 </connections>

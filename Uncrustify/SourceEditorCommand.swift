@@ -1,10 +1,3 @@
-//
-//  SourceEditorCommand.swift
-//  Uncrustifier
-//
-//  Created by Nook Harquail on 9/9/16
-//
-
 import Foundation
 import XcodeKit
 
@@ -17,17 +10,14 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         return Bundle.main.path(forResource: "uncrustify", ofType: nil)!
     }
     
-    var commandConfigPath: String {
-        let selection = SharedFileManager.readSelection()!
-        
-        
+    var commandConfigPath: String? {
         // if config option is in cfgOptions plist, use bundled config
-        if let configName = SourceEditorCommand.cfgOptions[selection] {
-            return Bundle.main.path(forResource: configName, ofType: nil)!
+        if let selection = SharedFileManager.readSelection(), let configName = SourceEditorCommand.cfgOptions[selection] {
+            return Bundle.main.path(forResource: configName, ofType: nil)
         }
         else {
             // otherwise, use custom config path
-            return SharedFileManager.customConfigPath()?.relativePath ?? ""
+            return SharedFileManager.customConfigPath()?.relativePath
         }
     }
     
@@ -35,23 +25,26 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         // save the currect selection
         let previousSelection: XCSourceTextRange? = (invocation.buffer.selections.firstObject as? XCSourceTextRange)?.copy() as? XCSourceTextRange
 
-        let errorPipe = Pipe()
-        let outputPipe = Pipe()
-        
-        let task = Process()
-        task.standardError = errorPipe
-        task.standardInput = invocation.buffer.completeBuffer
-        task.standardOutput = outputPipe
-        task.launchPath = commandPath
-        
-        // configure uncrustify to format with specified cfg, format for Objective-C, and strip messages
-        task.arguments = ["-c=\(commandConfigPath)", "-l=OC+", "-q"]
-        
         let inputPipe = Pipe()
+        let outputPipe = Pipe()
+        let errorPipe = Pipe()
+
+        let task = Process()
         task.standardInput = inputPipe
+        task.standardOutput = outputPipe
+        task.standardError = errorPipe
+        task.launchPath = commandPath
+
+        // configure uncrustify to format with specified cfg, format for Objective-C, and strip messages
+        if let configPath = commandConfigPath {
+            task.arguments = ["-c=\(configPath)", "-l=OC+", "-q"]
+        }
+        else {
+            task.arguments = ["-l=OC+", "-q"]
+        }
+
+        // Write unformatted code to stdin (where uncrustify reads from)
         let stdinHandle = inputPipe.fileHandleForWriting
-        
-        // write text to stdin (where uncrustify reads from)
         if let data = invocation.buffer.completeBuffer.data(using: .utf8) {
             stdinHandle.write(data)
             stdinHandle.closeFile()
@@ -60,17 +53,36 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         task.launch()
         task.waitUntilExit()
         
-        errorPipe.fileHandleForReading.readDataToEndOfFile()
+        // Check if there was an error
+        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+        if errorData.count > 0 {
+            if var errorString = String(data: errorData, encoding: .utf8) {
+                // Clean up the error text a bit
+                while let rangeToReplace = errorString.range(of: "\n") {
+                    errorString.replaceSubrange(rangeToReplace, with: ". ")
+                }
+                errorString = errorString.trimmingCharacters(in: .whitespacesAndNewlines)
+
+                let error = NSError(domain: "Uncrustifier", code: 1, userInfo: [NSLocalizedDescriptionKey: errorString])
+                completionHandler(error)
+            } else {
+                let error = NSError(domain: "Uncrustifier", code: 1, userInfo: [NSLocalizedDescriptionKey: "Unknown error :("])
+                completionHandler(error)
+            }
+
+            return
+        }
+
+        // Get formatted code
         let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
         if let outputString = String(data: outputData, encoding: .utf8) {
-            
             invocation.buffer.lines.removeAllObjects()
             outputString.enumerateLines(invoking: { (s: String, _) in
                 invocation.buffer.lines.add(s)
             })
         }
         
-        // adjust selection to fit within the formatted buffer
+        // Adjust selection to fit within the formatted buffer
         invocation.buffer.selections.removeAllObjects()
         if let selection = previousSelection {
             
